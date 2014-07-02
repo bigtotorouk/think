@@ -1,0 +1,13 @@
+1.
+无法加载控制器:Account
+错误位置
+FILE: /Users/xiaobing/Sites/think/ThinkPHP/ThinkPHP/Library/Think/App.class.php 　LINE: 92
+
+controller目录下文件名跟文件里面的类名不一致
+
+2.
+parse error
+错误位置
+FILE: /Users/xiaobing/Sites/think/Application/Admin/Controller/AccountController.class.php 　LINE: 9
+
+IndexController.class.php里面压根没有login方法

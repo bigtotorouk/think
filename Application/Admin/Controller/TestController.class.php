@@ -1,11 +1,11 @@
 <?php 
 	namespace Admin\Controller;
 	use Think\Controller;
-
 	class IndexController extends Controller {
-		public function index(){
-			echo 'admin index....';
-		}
-	}	
-	
+	    public function hello(){
+	        echo 'hello,thinkphp!';
+	    }
+	}
+
+
  ?>
