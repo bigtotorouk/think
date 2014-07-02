@@ -1,0 +1,23 @@
+[ 2014-06-27T15:13:27+08:00 ] 127.0.0.1 /think/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000168s ]
+INFO: [ app_init ] --END-- [ RunTime:0.093964s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.020223s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.020888s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\installed\EasyPHP-DevServer-14.1VC11\data\localweb\think\ThinkPHP\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `think_data` [ RunTime:0.230916s ]
+SQL: SELECT * FROM `think_data`  [ RunTime:0.000926s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000199s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000705s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.169080s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.169650s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.009064s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.009602s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.010714s ]
+INFO: [ app_end ] --END-- [ RunTime:0.011236s ]
+
