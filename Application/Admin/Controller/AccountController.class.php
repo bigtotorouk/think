@@ -6,9 +6,8 @@
 		 * 登录页面视图
 		 */
 		public function index () {
-			#redirect(U('/Account/login'), 5, '页面跳转中...')；
-			redirect('/Account/login', 5, '页面跳转中...');
-			#echo 'index';
+			//redirect(U('Account/login')); // ok
+			redirect('login'); // ok
 		}
 	    
 	    /**
@@ -30,7 +29,7 @@
 			if (IS_GET) {
 				# show login.html
 				$this->display();
-				#echo "login html";
+				// echo "login html";
 				return;
 			}
 
@@ -50,7 +49,7 @@
 			$name = $this->_post('uname');
 			$pwd = $this->_post('pwd', 'md5');
 
-	        $db = M('admin');
+	        $db = M('user');
 			$user = $db->where(array('username' => $name))->find();
 
 			if (!user || $user['password'] != $pwd) {
