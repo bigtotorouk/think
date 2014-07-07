@@ -1,8 +1,8 @@
 <?php 
 
-	namespace Home\Controller;
+	namespace Admin\Controller;
 	use Think\Controller;
-	class IndexController extends Controller {
+	class CommonController extends Controller {
 	    /**
 	 	 * 判断用户是否已登录
 	 	*/

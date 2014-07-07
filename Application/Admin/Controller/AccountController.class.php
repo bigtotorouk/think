@@ -29,12 +29,8 @@
 			if (IS_GET) {
 				# show login.html
 				$this->display();
-				// echo "login html";
+				//echo __APP__;
 				return;
-			}
-
-			if (!$this->isPost()) {
-				halt('页面不存在');
 			}
 
 			if (!isset($_POST['submit'])) {
@@ -46,8 +42,10 @@
 	//			$this->error('验证码错误');
 	//		}
 
-			$name = $this->_post('uname');
-			$pwd = $this->_post('pwd', 'md5');
+			//$name = $this->_post('uname');
+			//$pwd = $this->_post('pwd', 'md5');
+			$name = $_POST['uname'];
+			$pwd = md5($_POST['pwd']);
 
 	        $db = M('user');
 			$user = $db->where(array('username' => $name))->find();

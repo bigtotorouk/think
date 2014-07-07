@@ -20,7 +20,7 @@
 			</div> 
 			
 			<div id="login-content">
-				<form action="<?php echo U('Login/login');?>" method="post">
+				<form action="<?php echo U('Account/login');?>" method="post">
 					<p>
 						<label>Username</label>
 						<input class="text-input" type="text" name="uname"/>
