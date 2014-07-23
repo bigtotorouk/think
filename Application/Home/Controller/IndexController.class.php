@@ -11,7 +11,7 @@ class IndexController extends Controller {
     	$this->display();
     }
 
-    public function case(){
+    public function cases(){
     	$this->display();
     }
 
