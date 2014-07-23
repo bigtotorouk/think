@@ -1,0 +1,24 @@
+@charset "utf-8";
+/* login */
+.login , .up {height:245px;overflow:hidden;}
+.loginLeft {width:450px; float:left;}
+.loginRight {width:450px; float:right;}
+.login {border:1px solid #e2e4e5; padding:17px 17px 17px 130px; background:url(../images/login.jpg) 17px 17px no-repeat #f3f6f8;}
+.login td {padding:8px 0;}
+.login td label {padding-left:5px; line-height:30px;}
+.login td span {padding-left:5px;}
+.lText {width:181px; height:20px; border:1px solid #90b2c9;}
+.lText1 {width:100px;}
+.lBtn {width:109px; height:35px; background:url(../images/lBtn.jpg) left top no-repeat; line-height:35px; text-align:center; font-size:14px; font-weight:900; border:none; color:#FFF;}
+
+.up {border:1px solid #e2e4e5; padding:17px 17px 17px 130px; background:url(../images/up.jpg) 17px 17px no-repeat #f9fbfc;}
+.up td {padding:5px 0;}
+.up td.trp {text-align:right; padding-right:5px;}
+.up td label {padding-left:5px; line-height:30px;}
+.up td span {padding-left:5px;}
+.uText {width:181px; height:20px; border:1px solid #ccdce6; background:#fcfdfd;}
+.uText1 {width:100px;}
+.uBtn {width:109px; height:35px; background:url(../images/lBtn.jpg) left top no-repeat; line-height:35px; text-align:center; font-size:14px; font-weight:900; border:none; color:#FFF;}
+.up td em {color:#ff8a8a; padding-left:10px;}
+.register-info {border:2px solid #8ebbd8;opacity:0.5;filter:alpha(opacity=50);}
+.border-current {border:2px solid #8ebbd8;opacity:1;filter:alpha(opacity=100);}

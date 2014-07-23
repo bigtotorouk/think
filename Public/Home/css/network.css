@@ -1,0 +1,86 @@
+@charset "utf-8";
+/* network */
+.network div.changecontent{height:550px;overflow:hidden;position:relative;}
+.network div.map{ width:753px; height:550px;position:relative;}
+.network div.welcome{ left:24px; top:23px; font-size:20px; color:#646464; margin-bottom:37px; position:absolute;}
+.network div.storedetail{  width:753px; height:536px; position:absolute;top:0;left:0; display:none; z-index:100; background-color:#fff;}
+.network div.storedetail div.storename{ margin-left:13px; margin-top:14px; font-size:20px; color:#646464;}
+.network div.storedetail div.address{ margin-top:12px;}
+.network div.storedetail div.address,
+.network div.storedetail div.tel,
+.network div.storedetail div.fax{font-size:12px; color:#868686;margin-left:13px;}
+.network div.storedetail div.tel,
+.network div.storedetail div.fax{float:left; margin-right:1px;}
+.network div.storedetail div.return,
+.network div.storedetail div.googlemap{float:right; margin-top:22px; margin-right:11px; padding-right:11px; background:url(../images/store_detail_arrow_right.jpg) no-repeat right 3px; font-size:12px; color:#646464; cursor:pointer; *background-position:right 1px; _margin-right:6px;}
+.network div.storedetail div.googlemap{position:absolute;right:11px;top:50px;margin:0;background-position:right 7px;}
+.network div.storedetail div.googlemap img{margin-right:6px;}
+.network div.storedetail div.googlemap a{font-size:12px; color:#646464; text-decoration:none;}
+.network div.storedetail div.storepicture{padding-left:5px;padding-right:5px;padding-bottom:7px;padding-top:17px;clear:both;text-align:center;}
+.network div.stores { padding-top:23px;width:226px;}
+.network div.stores ul{list-style:none; margin:0; padding:0;}
+.network div.stores ul li {cursor:pointer;margin-top:1px; margin-bottom:1px;}
+.network div.stores ul li a{ text-decoration:none; font-size:12px; display:block; width:217px;/* padding-top:12px; */cursor:pointer;}
+.network div.stores ul li a div.bg{ /*margin-bottom:12px;*/ padding-top:8px;padding-bottom:8px;padding-left:34px; padding-right:9px;}
+.network div.stores ul li a div.bg span.title{ color:#646464;font-weight:bold; padding-right:10px;}
+.network div.stores ul li a div.bg span.title img{border:0px none;margin-left:5px;margin-bottom:-1px;}
+.network div.stores ul li a div.bg div.address{color:#b5b5b5;margin-top:2px;}
+.network div.stores ul li.picture a,
+.network div.stores ul li.picture a div.bg div.address,
+.network div.stores ul li.picture a div.bg span.title,
+.network div.stores ul li.picture a div.bg span.title{cursor:pointer;}
+.network div.stores ul li.picture a div.bg{ background:url(../images/network_stores_icon_picture.gif) no-repeat 8px 15px;padding-left:34px;}
+.network div.stores ul li a:hover{background: none;color:transparent;}
+.network div.stores ul li.picture a:hover div.bg{background:url(../images/network_stores_icon_picture.gif) no-repeat 8px 15px #efefef;}
+.network div.stores ul li.current a div.bg,
+.network div.stores ul li a:hover div.bg{ background-color:#efefef;}
+.network div.stores ul li.current a div.bg span.title,
+.network div.stores ul li a:hover div.bg span.title{}
+/*浮动详细信息样式*/
+.network div.smallstoredetail{ background:url(../images/network_stores_smaldetail_bg_2.gif) no-repeat bottom left; width:221px;display:none; position:absolute;top:0;left:0; display:none; z-index:110; padding-bottom:8px;}
+.network div.smallstoredetail div.bg{ background:url(../images/network_stores_smaldetail_bg_1.gif) no-repeat left top; width:215px; padding-left:11px; /*padding-right:9px;*/ padding-top:9px;}
+.network div.smallstoredetail div.bg div.smallstorepicture{ padding-bottom:7px;}
+.network div.smallstoredetail div.bg div.loading{ height:150px;}
+.network div.smallstoredetail div.bg div.storename,
+.network div.smallstoredetail div.bg div.address,
+.network div.smallstoredetail div.bg div.intro,
+.network div.smallstoredetail div.bg div.googlemap a,
+.network div.smallstoredetail div.bg div.viewpicture a{font-size:12px; color:#646464;}
+.network div.smallstoredetail div.bg div.smallstorepicture,
+.network div.smallstoredetail div.bg div.loading,
+.network div.smallstoredetail div.bg div.storename,
+.network div.smallstoredetail div.bg div.address,
+.network div.smallstoredetail div.bg div.intro{ width:180px; margin-bottom:4px;}
+.network div.smallstoredetail div.bg div.intro img{ margin-bottom:1px; margin-right:3px;}
+.network div.smallstoredetail div.bg div.googlemap a,
+.network div.smallstoredetail div.bg div.viewpicture a{text-decoration:none}
+.network div.smallstoredetail div.bg div.viewpicture a{background:url(../images/network_stores_smaldetail_icon_picture_arrow.gif) no-repeat right  3px; padding-right:12px;line-height:24px;*line-height:26px; *background-position:right 1px;}
+.network div.smallstoredetail div.bg div.googlemap,
+.network div.smallstoredetail div.bg div.viewpicture{ float:left; margin-right:8px; height:25px;margin-bottom:12px;}
+.network div.smallstoredetail div.bg div.googlemap img,
+.network div.smallstoredetail div.bg div.viewpicture img{ margin-right:6px;margin-bottom:2px;}
+.network div.smallstoredetail div.bg div.intro{ clear:both; margin-bottom:12px;}
+/*滚动条*/
+.network div.stores div.scrollpane{height:520px;}
+.network div.stores .jScrollPaneContainer {position:relative;overflow:hidden;z-index:1;outline:none;}
+.network div.stores .jScrollPaneTrack {position:absolute;cursor:pointer;right:1px;top:0px;height:100%;background:url(../images/scrollpane_track.gif) repeat-y #ffffff; /*border-left:1px solid #b5b5b5;*/ margin-bottom:1px;}
+.network div.stores .jScrollPaneDrag {position:absolute;/*background-color: #646464;*/cursor: pointer;	overflow: hidden; margin-left:1px;background:url(../images/scrollpane_drag_middle.gif) repeat-y -1px 0px;}
+.network div.stores .jScrollPaneDragTop {position: absolute;top: 0;left: 0;	overflow: hidden; height:9px; background:url(../images/scrollpane_drag_up.gif) no-repeat 0px top #ffffff; _background-position:0px top;/*border-bottom:1px solid #ffffff;*/}
+.network div.stores .jScrollPaneDragBottom {position:absolute;bottom:0;left:0;overflow:hidden;height:9px;background:url(../images/scrollpane_drag_bottom.gif) no-repeat 0px top #ffffff;_background-position:0px top; /*border-top:1px solid #ffffff*/}
+.network div.stores a.jScrollArrowUp {display: block;position:absolute;z-index:1;top:0;right:1px;text-indent: -2000px;overflow: hidden;	/*background-color: #666;*/	height:8px;}
+.network div.stores a.jScrollArrowUp:hover {/*background-color: #f60;*/}
+.network div.stores a.jScrollArrowDown {display:block;position:absolute;z-index:1;bottom:0;right:1px;text-indent:-2000px;overflow:hidden;/*background-color: #666;*/	height:8px;}
+.network div.stores a.jScrollArrowDown:hover {/*background-color: #f60;*/}
+.network div.stores a.jScrollActiveArrowButton,
+.network div.stores a.jScrollActiveArrowButton:hover {/*background-color: #f00;*/}
+.network div.stores a.jScrollArrowUp,
+.network div.stores a.jScrollArrowUp:hover {background:url(../images/scrollpane_track.gif) repeat-y #ffffff;}
+.network div.stores a.jScrollArrowDown {background:url(../images/scrollpane_track.gif) repeat-y #ffffff;}
+.network div.stores a.jScrollArrowDown:hover { }
+.network div.stores a.jScrollActiveArrowButton,
+.network div.stores  a.jScrollActiveArrowButton:hover {background-position: 0 0px;}
+.network div.stores .scroll-pane {width: 313px;height:330px;overflow:auto;float:left;}
+ 
+.loading {background: transparent url(../images/loading.gif) 50% 50% no-repeat;}
+
+

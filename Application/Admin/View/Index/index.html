@@ -1,8 +1,62 @@
-<html>
-<head>
-	<title>首页</title>
-</head>
+<include file="Index:header" />
+
 <body>
-	这是首页
+    <div id="body-wrapper"> 
+        <include file="Index:nav" />
+
+        <div id="main-content"> 
+            <div class="content-box">
+                <div class="content-box-header">
+                    <h3>Product List</h3>
+                </div>
+
+                <div class="content-box-content">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Pid</th>
+                                    <th>Model</th>
+                                    <th>Input Voltage</th>
+                                    <th>Lamp Shape</th>
+                                    <th>Base</th>
+                                    <th>Power</th>
+                                    <th>Color Temperature</th>
+                                    <th></th>
+                                </tr>
+
+                            </thead>
+                            <tbody>
+                            <volist name="prd_list" id="vo">
+                                <tr>
+                                    <td>{$vo.pid}</td>
+                                    <td><a href="{:U('Index/list_img')}&model={$vo.model}">{$vo.model}</a></td>
+                                    <td>{$vo.input_voltage}</td>
+                                    <td>{$vo.lamp_shape}</td>
+                                    <td>{$vo.base}</td>
+                                    <td>{$vo.power}</td>
+                                    <td>{$vo.color_temperature}</td>
+                                    <td>
+                                        <a href="{:U('Index/edit_prd')}&pid={$vo.pid}" title="Edit"><img src="__PUBLIC__/images/icons/pencil.png" alt="Edit" /></a>
+                                        <a href="{:U('Index/del_prd')}&pid={$vo.pid}" title="Delete"><img src="__PUBLIC__/images/icons/cross.png" alt="Delete" /></a> 
+                                    </td>
+                                </tr>
+                            </volist>
+                            </tbody>
+                            <tfoot>
+                                <tr>
+                                    <td colspan="8" style="text-align:right;padding-top:20px;">
+                                        {$page}
+                                    </td>
+                                </tr>
+                            </tfoot>
+                        </table>
+                </div>
+            </div> 
+        </div> 
+    </div>
+
+<include file="Index:scripts" />
+
 </body>
+
 </html>

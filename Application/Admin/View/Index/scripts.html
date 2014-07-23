@@ -1,0 +1,20 @@
+<!-- jQuery -->
+<script type="text/javascript" src="__PUBLIC__/js/jquery-1.7.2.min.js"></script>
+
+<!--[if IE 6]>
+    <script type="text/javascript" src="__PUBLIC__/js/DD_belatedPNG_0.0.7a.js"></script>
+    <script type="text/javascript">
+        DD_belatedPNG.fix('.png_bg, img, li');
+    </script>
+<![endif]-->
+<script type="text/javascript" src="__PUBLIC__/js/jquery.jBox-2.3.min.js"></script>
+<script type="text/javascript" src="__PUBLIC__/js/jquery.jBox-zh-CN.js"></script>
+
+<script type="text/javascript">
+    var current_menu_id = "{$menu_id}";
+    $(document).ready(function(){
+        var current_menu = $("#"+current_menu_id);
+        current_menu.addClass("current");
+    });
+    
+</script>

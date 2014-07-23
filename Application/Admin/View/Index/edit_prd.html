@@ -1,0 +1,197 @@
+<include file="Index:header" />
+
+<body>
+    <div id="body-wrapper"> 
+        <include file="Index:nav" />
+
+        <div id="main-content"> 
+            <div class="content-box">
+                <div class="content-box-header">
+                    <h3>Edit Product</h3>
+                </div>
+
+                <div class="content-box-content">
+                    <form action="{:U('Index/save_edit')}" method="post" id="edit_prd_form">
+
+                        <fieldset>
+                            <p>
+                                <label>Model</label>
+                                <input class="text-input medium-input" type="text" name="model" id="model" value='{$result.model}'/>  
+                            </p>
+
+                            <p>
+                                <label>Input Voltage</label>
+                                <select name="input_voltage" class="small-input" id="input_voltage">
+                                    {$option_input_voltage}
+                                </select>
+                            </p>
+
+                            <p>
+                                <label>Lamp Shape</label>
+                                <select name="lamp_shape" class="medium-input" id="lamp_shape">
+                                    {$lamp_shape}
+                                </select>
+                            </p>
+
+                            <p>
+                                <label>Base</label>
+                                <select name="base" class="small-input" id="base">
+                                    {$base}
+                                </select>
+                            </p>
+
+                            <p>
+                                <label>Power</label>
+                                <select name="power" class="small-input" id="power">
+                                    {$power}
+                                </select>
+                            </p>
+
+                            <p>
+                                <label>Power Replacement</label>
+                                <select name="power_replacement" class="medium-input" id="power_replacement">
+                                    {$power_replacement}
+                                </select> 
+                            </p>
+
+                            <p style="display:none;">
+                                <label>Power Replacement Value</label>
+                                <select name="power_replacement_val" class="small-input" id="power_replacement_val">
+                                    {$power_replacement_val}
+                                </select> 
+                            </p>
+
+                            <p>
+                                <label>Dimmable</label>
+                                <select name="dimmable" class="small-input" id="dimmable">
+                                    {$dimmable}
+                                </select>
+                            </p>
+
+                            <p>
+                                <label>Lumen</label>
+                                <input class="text-input small-input" type="text" name="lumen" value='{$result.lumen}'/>
+                            </p>
+
+                            <p>
+                                <label>Life Time</label>
+                                <input class="text-input medium-input" type="text" name="life_time" value='{$result.life_time}'/>
+                            </p>
+
+                            <p>
+                                <label>Energy Level</label>
+                                <input class="text-input small-input" type="text" name="energy_level" value='{$result.energy_level}'/>
+                            </p>
+
+                            <p>
+                                <label>Color Temperature</label>
+                                <input class="text-input medium-input" type="text" name="color_temperature" value='{$result.color_temperature}'/>
+                            </p>
+
+
+                            <p>
+                                <label>Beam Angel</label>
+                                <input class="text-input small-input" type="text" name="beam_angel" value='{$result.beam_angel}'/>
+                            </p>
+
+                            <p>
+                                <label>Central Intensity</label>
+                                <input class="text-input small-input" type="text" name="central_intensity" value='{$result.central_intensity}'/>
+                            </p>
+
+                            <p>
+                                <label>CRI</label>
+                                <input class="text-input small-input" type="text" name="cri" value='{$result.cri}'/>
+                            </p>
+
+                            <p>
+                                <label>Dimension(mm)</label>
+                                <input class="text-input small-input" type="text" name="dimension" value='{$result.dimension}'/>
+                            </p>
+
+                            <p>
+                                <label>Warranty</label>
+                                <input class="text-input small-input" type="text" name="warranty" value='{$result.warranty}'/>
+                            </p>
+
+                            <p>
+                                <label>Ordering Code</label>
+                                <input class="text-input medium-input" type="text" name="ordering_code" value='{$result.ordering_code}'/>
+                            </p>
+
+                            <p>
+                                <label> Description A</label>
+                                <textarea class="text-input textarea" name="description_a" rows="5">{$result.description_a}</textarea>
+                                <br><small>(not more than 200 letters)</small>
+                            </p>
+
+                            <p>
+                                <label> Description B</label>
+                                <textarea class="text-input textarea" name="description_b" rows="5">{$result.description_b}</textarea>
+                                <br><small>(not more than 200 letters)</small>
+                            </p>
+
+                            <p>
+                                <label>Carton Size(mm)</label>
+                                <input class="text-input medium-input" type="text" name="carton_size" value='{$result.carton_size}'/>
+                            </p>
+
+                            <p>
+                                <label>QTY/CTN （PCS）</label>
+                                <input class="text-input small-input" type="text" name="qty_ctn" value='{$result.qty_ctn}'/>
+                            </p>
+
+                            <p>
+                                <label>Gross Weight/PC</label>
+                                <input class="text-input small-input" type="text" name="gross_weight_pc" value='{$result.gross_weight_pc}'/>
+                            </p>
+
+                            <p>
+                                <label>Region</label>
+                                <input type="checkbox" name="asia_pacific" value="1" <eq name='result.asia_pacific' value="1">checked</eq>/>Asia Pacific &nbsp;
+                                <input type="checkbox" name="middle_east_and_africa" value="1" <eq name='result.middle_east_and_africa' value="1">checked</eq>/>Middle East and Africa &nbsp;
+                                <input type="checkbox" name="south_america" value="1" <eq name='result.south_america' value="1">checked</eq>/>South America &nbsp;
+                                <input type="checkbox" name="europe" value="1" <eq name='result.europe' value="1">checked</eq>/>Europe &nbsp;
+                                <input type="checkbox" name="india" value="1" <eq name='result.india' value="1">checked</eq>/>India &nbsp;
+                            </p>
+                            
+                            <p>
+                                <input type="hidden" name="pid" value="{$result.pid}"/> 
+                                <input class="button" type="submit" value="Save" style="width:120px;font-size:18px !important;" />
+                                <input class="button" type="reset" value="Reset" />
+                            </p>
+
+                        </fieldset>
+
+                        <div class="clear"></div><!-- End .clear -->
+
+                    </form>
+                </div>
+            </div> 
+        </div> 
+    </div>
+
+<include file="Index:scripts" />
+
+<script type="text/javascript">
+    
+    $(document).ready(function(){
+        $("#power_replacement").change(function(){
+            var this_val = $(this).val();
+            console.log(this_val);
+            $("#power_replacement_val").find(":contains("+this_val+")").attr("selected",true);
+        });
+        
+        $("#edit_prd_form").submit(function(){
+            var $model = $("#model");
+            if($.trim($model.val())==""){
+                alert("Please input model!");
+                $model.focus();
+                return false;
+            }
+        });
+    });
+</script>
+</body>
+
+</html>

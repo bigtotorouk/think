@@ -5,7 +5,8 @@
 
 	class IndexController extends CommonController {
 		public function index(){
-			echo 'admin index....';
+			//echo 'admin index....';
+			$this->display();
 		}
 
 		/**
@@ -14,7 +15,7 @@
 	    public function logout() {
 	        session_unset();
 	        session_destroy();
-	        redirect(U('Login/index'));
+	        redirect(U('Account/index'));
 	    }
 	}	
 	

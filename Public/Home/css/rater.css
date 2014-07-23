@@ -1,0 +1,27 @@
+/* rater-star */
+.rater-star{position:relative;list-style:none;margin:0;padding:0;background-repeat:repeat-x;background-position:left top;float:left;}
+.rater-star-item, .rater-star-item-current, .rater-star-item-hover{position:absolute;top:0;left:0;background-repeat:repeat-x;}
+.rater-star-item{background-position:-100% -100%;}
+.rater-star-item-hover{background-position:0 -48px;cursor:pointer;}
+.rater-star-item-current{background-position:0 -48px;cursor:pointer;}
+.rater-star-item-current.rater-star-happy{background-position: 0 -25px;}
+.rater-star-item-hover.rater-star-happy{background-position: 0 -25px;}
+.rater-star-item-current.rater-star-full{background-position: 0 -72px;}
+/* popinfo */
+.popinfo{display:none;position:absolute;top:30px;background:url(../images/rater/infobox-bg.gif) no-repeat;padding-top:8px;width:192px;margin-left:-14px;}
+.popinfo .info-box{border:1px solid #f00;border-top:0;padding:0 5px;color:#F60;background:#FFF;line-height:22px;}
+.popinfo .info-box div{color:#333;}
+/* rater-click-tips */
+.rater-click-tips{font:normal 12px/25px Tahoma, Geneva, sans-serif;color:#333;margin-left:10px;background:url(../images/rater/infobox-bg-l.gif) no-repeat 0 0;width:125px;height:34px;padding-left:16px;overflow:hidden;}
+.rater-click-tips span{display:block;background:#FFF9DD url(../images/rater/infobox-bg-l-r.gif) no-repeat 100% 0;height:34px;line-height:34px;padding-right:5px;}
+.rater-star-item-tips{background:url(../images/rater/star-tips.gif) no-repeat 0 0;height:41px;overflow:hidden;}
+.cur.rater-star-item-tips{display:block;}
+/* goods-comm-stars */
+.goods-comm-stars{height:41px;}
+.goods-comm-stars .rater-star-result{padding-left:10px;color:#F60;font-weight:bold;}
+.goods-comm-stars .rater-star-result,.goods-comm-stars .rater-click-tips{float:left;}
+.error-tips{display:none;}
+.goods-comm-stars .error-tips{line-height:19px;}
+.error-nostarts{text-indent:-99em;background:url(../images/rater/error-nostart.gif) no-repeat 0 0;width:353px;height:45px;position:relative;top:-5px;}
+
+

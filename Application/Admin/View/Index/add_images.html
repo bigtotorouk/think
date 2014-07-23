@@ -1,0 +1,155 @@
+<include file="Index:header" />
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/uploadify/uploadify.css">
+<style type="text/css">
+    #load_images{
+        width:90%;
+        text-align:left;
+        margin-top:15px;
+    }
+    #load_images img{
+        border:1px solid #cccccc;
+        width:114px;
+        height:114px;
+    }
+    #load_images .img_box{
+        float:left;
+        margin:5px;
+    }
+    #load_images a.del_img{
+        display:inline-block;
+        width:20px;
+        font-size:12px;
+        text-align:left;
+        padding:2px 5px;
+        color:#0055FF;
+    }
+</style>
+<body>
+    <div id="body-wrapper"> 
+        <include file="Index:nav" />
+
+        <div id="main-content"> 
+            <div class="content-box">
+                <div class="content-box-header">
+                    <h3>Add Product Images</h3>
+                </div>
+
+                <div class="content-box-content">
+                    <form id="upload_images_form">
+                        <fieldset>
+                            <p>
+                                <label>Product Model</label>
+                                <select name="model" class="medium-input" id="model">
+                                    {$model_list}
+                                </select>
+                            </p>
+                            <div class="clear"></div>
+                            <br>
+                            <div>
+                                <input id="file_upload" name="file_upload" type="file" multiple="true"/>
+                                <div id="file_queue"></div>
+                            </div>
+                            <br>
+
+                            <div class="clear"></div>
+                            <p>
+                                <a id="btn_cancel" class="button" href="###">Cancel</a>
+                            </p>
+                            <p>
+                                <a id="btn_upload" class="button" href="###" style="width:120px;font-size:18px!important;line-height:40px;font-weight:bold;text-align:center;">Upload</a>
+                            </p>
+
+                        </fieldset>
+                    </form>
+                    <div class="clear"></div>
+                    <div id="load_images"></div>
+                    <div class="clear"></div>
+                </div>
+            </div> 
+        </div> 
+    </div>
+
+<include file="Index:scripts" />
+<script src="__PUBLIC__/uploadify/jquery.uploadify.min.js" type="text/javascript"></script>
+<script type="text/javascript">
+    function del_img(mid,me){
+        var $this = $(me);
+        var del_url = "{:U('Index/del_img')}&mid="+mid;
+        $.get(del_url,function(ret){
+            if(ret=='ok'){
+                $this.parent().remove();
+            }else{
+                alert("Something wrong,please try again!");
+            }
+        });
+    }
+    $(document).ready(function() {
+        var $file_upload = $('#file_upload');
+        var uploader = "{:U('Upload/upload_images')}";
+        
+        $("#model").change(function(){
+            $("#load_images").empty();
+        });
+        
+        
+        $file_upload.uploadify({
+            "swf": "__PUBLIC__/uploadify/uploadify.swf",
+            "queueID": "file_queue",
+            "multi": true,
+            "queueSizeLimit": 25,
+            "fileExt": '*.jpg;*.gif,*.png',
+            "sizeLimit": '2048000', //最大允许的文件大小为2M
+            "method": 'post',
+            "auto": false,
+            "overrideEvents": ["onDialogClose"],
+            "onSelect":function(){
+                var model = $.trim($("#model").val());
+                if(model==""){
+                    alert("Please select model first!");
+                    return false;
+                }
+            },
+            "onFallback": function() {
+                alert("您未安装FLASH控件，无法上传图片！请安装FLASH控件后再试。");
+            },
+            "onUploadSuccess": function(file, data, response) {
+                if(data.length>5){
+                    var ret_data = JSON.parse(data);
+                    var $load_images=$("#load_images");
+                    var tmp_str = '<div class="img_box"><img src="'+ret_data.img_url+'"><a href="###" onclick="del_img('+ret_data.mid+',this);return false;">del</a></div>';
+                    $load_images.append(tmp_str);
+                }
+                
+            }
+        });
+
+        $("#btn_upload").click(function() {
+            var file_queue = $("#file_queue").text();
+            if ($.trim(file_queue) == "") {
+                alert("Please select images to upload！");
+                return false;
+            }
+            
+            var model = $.trim($("#model").val());
+            if (model == "") {
+                alert("Please select model!");
+                return false;
+            }
+            
+            uploader += "&model="+model;
+            $file_upload.uploadify("settings","uploader",uploader);
+            $file_upload.uploadify("upload", "*");
+            return false;
+        });
+
+        $("#btn_cancel").click(function() {
+            $file_upload.uploadify("cancel", "*");
+            return false;
+        });
+
+
+    });
+</script>
+</body>
+
+</html>

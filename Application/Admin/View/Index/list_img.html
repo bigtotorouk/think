@@ -1,0 +1,68 @@
+<include file="Index:header" />
+<style type="text/css">
+    #load_images{
+        width:90%;
+        text-align:left;
+        margin-top:15px;
+    }
+    #load_images img{
+        border:1px solid #cccccc;
+        width:114px;
+        height:114px;
+    }
+    #load_images .img_box{
+        float:left;
+        margin:5px;
+    }
+    #load_images a.del_img{
+        display:inline-block;
+        width:20px;
+        font-size:12px;
+        text-align:left;
+        padding:2px 5px;
+        color:#0055FF;
+    }
+</style>
+<body>
+    <div id="body-wrapper"> 
+        <include file="Index:nav" />
+        <div id="main-content"> 
+            <div class="content-box">
+                <div class="content-box-header">
+                    <h3>View Images - {$model}</h3>
+                </div>
+
+                <div class="content-box-content">
+                    <div id="load_images">
+                        <volist name="img_list" id="vo">
+                            <div class="img_box">
+                                <img src="{$vo.img_url}">
+                                <a href="###" onclick="del_img({$vo.mid}, this);
+                                        return false;">del</a>
+                            </div>
+                        </volist>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+            </div> 
+        </div> 
+    </div>
+
+<include file="Index:scripts" />
+<script type="text/javascript">
+    function del_img(mid, me) {
+        var $this = $(me);
+        var del_url = "{:U('Index/del_img')}&mid=" + mid;
+        $.get(del_url, function(ret) {
+            if (ret == 'ok') {
+                $this.parent().remove();
+            } else {
+                alert("Something wrong,please try again!");
+            }
+        });
+    }
+
+</script>
+</body>
+
+</html>
