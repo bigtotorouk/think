@@ -19,4 +19,8 @@ class IndexController extends Controller {
     	$this->display();
     }
 
+    public function contacts(){
+    	$this->display();
+    }
+
 }
